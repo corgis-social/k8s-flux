@@ -1,0 +1,94 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: renovate
+spec:
+  releaseName: renovate
+  targetNameSpace: renovate
+  interval: 15m
+  chart:
+    spec:
+      # renovate: registryUrl=https://docs.renovatebot.com/helm-charts
+      chart: renovate
+      version: 34.22.2
+      sourceRef:
+        kind: HelmRepository
+        name: renovate
+        namespace: flux-system
+      interval: 15m
+      install:
+        createNameSpace: true
+
+  values:
+    cronjob:
+      schedule: "@hourly"
+
+    ssh_config:
+      enabled: true
+      existingSecret: renovate-credentials
+
+    existingSecret: renovate-env
+
+    renovate:
+      config: |
+        {
+         "printConfig": true,
+         "binarySource": "install",
+         "repositories": ["corgis-social/k8s-flux"],
+         "reqireConfig": false,
+         "dependencyDashboard": true,
+         "helm-values": {"fileMatch": ["cluster/.+/helmrelease\\.yaml$"]},
+         "rebaseWhen": "behind-base-branch",
+         "regexManagers": [
+           {
+             "fileMatch": ["cluster/.+\\.yaml$"],
+             "matchStrings": [
+               "registryUrl=(?<registryUrl>.*?)\n *chart: (?<depName>.*?)\n *version: (?<currentValue>.*)\n"
+             ],
+             "datasourceTemplate": "helm"
+           }
+         ],
+         "packageRules": [
+           {
+             "matchDatasources": ["docker"],
+             "versioning": "semver"
+           },
+           {"matchUpdateTypes": ["major"], "labels": ["type/major"]},
+           {
+             "matchUpdateTypes": ["minor"], "labels": ["type/minor"],
+             "automerge": true
+           },
+           {
+             "matchUpdateTypes": ["patch"], "labels": ["type/patch"],
+             "automerge": true
+           },
+           {
+             "matchDatasources": ["helm"],
+             "matchUpdateTypes": ["minor"],
+             "semanticCommitType": "feat",
+             "semanticCommitScope": "helm",
+             "automerge": true
+           },
+           {
+             "matchDatasources": ["helm"],
+             "matchUpdateTypes": ["patch"],
+             "semanticCommitType": "fix",
+             "semanticCommitScope": "helm",
+             "automerge": true
+           },
+           {"ignoreTests": true, "matchUpdateTypes": ["minor", "patch"]},
+           {"matchDatasources": ["helm"], "ignoreDeprecated": true}
+         ],
+         "regexManagers": [
+            {
+              "fileMatch": [
+                "cluster/.+\\.yaml$"
+              ],
+              "matchStrings": [
+                "registryUrl=(?<registryUrl>.*?)\n *chart: (?<depName>.*?)\n *version: (?<currentValue>.*)\n"
+              ],
+              "datasourceTemplate": "helm"
+            }
+          ]
+        }

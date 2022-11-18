@@ -18,5 +18,5 @@ external services
     - [x] backup
   - [x] object store
     - [ ] backup
-  - [ ] email
-    - [ ] mailchimp maybe
+  - [x] email
+    - [ ] sendgrid

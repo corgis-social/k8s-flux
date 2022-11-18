@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: cloudflare-cluster-issuer
+  namespace: cert-manager
+spec:
+  acme:
+    email: admin@corgis.social
+    privateKeySecretRef:
+      name: cloudflare-cluster-issuer
+    server: https://acme-v02.api.letsencrypt.org/directory
+    solvers:
+    - selector:
+        dnsZones: 
+        - corgis.social
+      dns01:
+        cloudflare:
+          apiTokenSecretRef:
+            key: api-token
+            name: cloudflare-api-token-secret
+

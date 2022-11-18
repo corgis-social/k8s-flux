@@ -1,0 +1,38 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ingress-nginx
+  namespace: flux-system
+spec:
+  releaseName: ingress-nginx
+  targetNamespace: ingress-nginx
+  interval: 15m
+  chart:
+    spec:
+      # renovate: registryUrl=https://kubernetes.github.io/ingress-nginx
+      chart: ingress-nginx
+      version: 4.4.0
+      sourceRef:
+        kind: HelmRepository
+        name: ingress-nginx
+        namespace: flux-system
+      interval: 15m
+  install:
+    createNamespace: true
+  values:
+    controller:
+      kind: "DaemonSet"
+      ingressClassResource:
+        name: nginx
+        enabled: true
+        default: true
+      service:
+        enabled: true
+        externalTrafficPolicy: "Local"
+        annotations:
+          prometheus.io/scrape: "true"
+          prometheus.io/port: "10254"
+      metrics:
+        enabled: true
+        

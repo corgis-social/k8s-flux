@@ -1,0 +1,13 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmChart
+metadata:
+  name: mastodon
+  namespace: flux-system
+spec:
+  interval: 30m0s
+  chart: mastodon
+  reconcileStrategy: ChartVersion
+  sourceRef:
+    name: mastodon
+    kind: GitRepository

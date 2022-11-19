@@ -99,6 +99,7 @@ spec:
     ingress:
       enabled: true
       annotations:
+        nginx.ingress.kubernetes.io/proxy-body-size: 40m
       hosts:
         - host: corgis.social
           paths:

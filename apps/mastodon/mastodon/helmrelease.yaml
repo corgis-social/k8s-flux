@@ -57,7 +57,7 @@ spec:
         # you can also specify the name of an existing Secret
         # with keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
         existingSecret: "mastodon-secrets"
-        # bucket: "assets.corgis.social"
+        bucket: "."
         endpoint: "https://us-east-1.linodeobjects.com"
         hostname: "assets.corgis.social"
         region: "US"

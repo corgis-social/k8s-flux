@@ -58,8 +58,8 @@ spec:
         # with keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
         existingSecret: "mastodon-secrets"
         bucket: "assets.corgis.social"
-        endpoint: https://us-east-1.linodeobjects.com
-        hostname: assets.corgis.social
+        endpoint: "https://us-east-1.linodeobjects.com"
+        hostname: "assets.corgis.social"
         region: "US"
         # s3_alias_host: "assets.corgis.social"
         # If you have a caching proxy, enter its base URL here.

@@ -59,7 +59,7 @@ spec:
         existingSecret: "mastodon-secrets"
         bucket: "assets.corgis.social"
         endpoint: https://us-east-1.linodeobjects.com
-        # hostname: assets.corgis.social
+        hostname: assets.corgis.social
         region: "US"
         # s3_alias_host: "assets.corgis.social"
         # If you have a caching proxy, enter its base URL here.

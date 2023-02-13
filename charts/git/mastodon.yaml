@@ -6,6 +6,10 @@ metadata:
   namespace: flux-system
 spec:
   interval: 30m0s
-  url: https://github.com/mastodon/chart
+  # disabled until https://github.com/mastodon/chart/issues/34 is addressed
+  # url: https://github.com/mastodon/chart
+  url: https://github.com/dbsanfte/chart
   ref:
-    branch: main
+    # see above comment on fix
+    # branch: main
+    branch: "fix-#34"

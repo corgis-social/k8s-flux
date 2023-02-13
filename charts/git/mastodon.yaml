@@ -12,5 +12,4 @@ spec:
   ref:
     # see above comment on fix
     # branch: main
-    # commit for branch fix-#34
-    commit: e71e990db18bf7730f89111786dbb20c942d98d4
+    branch: 'fix-#34'

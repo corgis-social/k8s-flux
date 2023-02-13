@@ -7,9 +7,9 @@ metadata:
 spec:
   interval: 30m0s
   # disabled until https://github.com/mastodon/chart/issues/34 is addressed
-  # url: https://github.com/mastodon/chart.git
-  url: https://github.com/dbsanfte/chart.git
+  # url: https://github.com/mastodon/chart
+  url: https://github.com/dbsanfte/chart
   ref:
     # see above comment on fix
-    # branch: main
-    branch: "fix-#34"
+    branch: main
+    # branch: fix-#34

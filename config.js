@@ -36,8 +36,14 @@ module.exports = {
       "versioning": "semver"
     },
     {"matchUpdateTypes": ["major"], "labels": ["type/major"]},
-    {"matchUpdateTypes": ["minor"], "labels": ["type/minor"]},
-    {"matchUpdateTypes": ["patch"], "labels": ["type/patch"]},
+    {
+      "matchUpdateTypes": ["minor"], "labels": ["type/minor"],                                                 
+      "automerge": true 
+    },
+    {
+      "matchUpdateTypes": ["patch"], "labels": ["type/patch"],                                                 
+      "automerge": true 
+    },
     {
       "matchDatasources": ["helm"],
       "matchUpdateTypes": ["minor"],

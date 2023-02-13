@@ -19,8 +19,6 @@ spec:
         name: renovate
         namespace: flux-system
       interval: 15m
-      install:
-        createNameSpace: true
 
   values:
     cronjob:

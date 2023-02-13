@@ -5,7 +5,9 @@ metadata:
   name: renovate
 spec:
   releaseName: renovate
-  targetNameSpace: renovate
+  targetNamespace: renovate
+  install:
+    createNamespace: true
   interval: 15m
   chart:
     spec:

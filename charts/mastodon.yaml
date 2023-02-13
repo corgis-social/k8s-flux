@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 30m0s
-  chart: mastodon
+  chart: .
   reconcileStrategy: ChartVersion
   sourceRef:
     name: mastodon

@@ -50,5 +50,5 @@
    },
    {"ignoreTests": true, "matchUpdateTypes": ["minor", "patch"]},
    {"matchDatasources": ["helm"], "ignoreDeprecated": true}
- ],
-};
+ ]
+}

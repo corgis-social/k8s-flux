@@ -37,9 +37,15 @@ spec:
          "printConfig": false,
          "binarySource": "install",
          "repositories": ["corgis.social/k8s-flux"],
-         "reqireConfig": false,
+         "requireConfig": false,
          "dependencyDashboard": true,
-         "helm-values": {"fileMatch": ["cluster/.+/helmrelease\\.yaml$"]},
+         "flux": {
+           "fileMatch": ["cluster/flux-system/flux/flux-system.yaml$"]
+         },
+         "helm-values": {"fileMatch": [
+           "infra/.+/helmrelease\\.yaml$",
+           "apps/.+/helmrelease\\.yaml$"
+         ]},
          "rebaseWhen": "behind-base-branch",
          "regexManagers": [
            {

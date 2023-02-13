@@ -40,7 +40,7 @@ spec:
          "requireConfig": false,
          "dependencyDashboard": true,
          "flux": {
-           "fileMatch": ["cluster/flux-system/flux/flux-system.yaml$"]
+           "fileMatch": ["cluster/flux-system/flux-system.yaml$"]
          },
          "helm-values": {"fileMatch": [
            "infra/.+/helmrelease\\.yaml$",

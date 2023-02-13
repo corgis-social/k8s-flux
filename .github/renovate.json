@@ -1,13 +1,14 @@
 {
  "enabled": true,
  "dependencyDashboard": true,
-  "dependencyDashboardTitle": "Renovate Dashboard",
-  "assigneesFromCodeOwners": true,
-  "reviewersFromCodeOwners": true,
-  "prConcurrentLimit": 5,
+ "dependencyDashboardTitle": "Renovate Dashboard",
+ "assigneesFromCodeOwners": true,
+ "reviewersFromCodeOwners": true,
+ "prConcurrentLimit": 5,
+ "printConfig": true,
 
 
-  "flux": {
+ "flux": {
    "fileMatch": ["cluster/flux-system/flux-system.yaml$"]
  },
  "helm-values": {"fileMatch": [

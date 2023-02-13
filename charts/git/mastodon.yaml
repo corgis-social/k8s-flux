@@ -11,5 +11,5 @@ spec:
   url: https://github.com/dbsanfte/chart
   ref:
     # see above comment on fix
-    branch: main
-    # branch: fix-#34
+    # branch: main
+    branch: fix-#34

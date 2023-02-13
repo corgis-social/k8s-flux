@@ -7,7 +7,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 15m0s
-  url: https://gitlab.com/corgis.social/k8s-flux.git
+  url: https://github.com/corgis-social/k8s-flux.git
   ref:
     branch: main
 ---

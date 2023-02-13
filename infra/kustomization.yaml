@@ -4,6 +4,7 @@ kind: Kustomization
 bases:
 - cert-manager
 - external-dns
+- gitlab-runner
 - ingress-nginx
 - metrics-server
 #- renovate

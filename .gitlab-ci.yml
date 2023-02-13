@@ -1,0 +1,9 @@
+include:
+  - project: 'renovate-bot/renovate-runner'
+    file: '/templates/renovate-dind.gitlab-ci.yml'
+
+renovate:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+    - if: '$CI_PIPELINE_SOURCE == "web"'

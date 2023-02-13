@@ -4,7 +4,6 @@
   "dependencyDashboardTitle": "Renovate Dashboard",
   "assigneesFromCodeOwners": true,
   "reviewersFromCodeOwners": true,
-  "suppressNotifications": ["prIgnoreNotification"],
   "prConcurrentLimit": 5,
 
 

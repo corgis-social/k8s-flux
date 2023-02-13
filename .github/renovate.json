@@ -51,15 +51,4 @@
    {"ignoreTests": true, "matchUpdateTypes": ["minor", "patch"]},
    {"matchDatasources": ["helm"], "ignoreDeprecated": true}
  ],
- "regexManagers": [
-    {
-      "fileMatch": [
-        "cluster/.+\\.yaml$"
-      ],
-      "matchStrings": [
-        "registryUrl=(?<registryUrl>.*?)\n *chart: (?<depName>.*?)\n *version: (?<currentValue>.*)\n"
-      ],
-      "datasourceTemplate": "helm"
-    }
-  ]
 };

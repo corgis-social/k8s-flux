@@ -12,6 +12,7 @@ module.exports = {
   "repositories": ["corgis.social/k8s-flux"],
   "requireConfig": "required",
   "dependencyDashboard": true,
+  "extends": ["docker:disable"],
   "flux": {
     "fileMatch": ["cluster/flux-system/flux-system.yaml$"]
   },

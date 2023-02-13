@@ -50,10 +50,6 @@ spec:
            }
          ],
          "packageRules": [
-           {
-             "matchDatasources": ["docker"],
-             "versioning": "semver"
-           },
            {"matchUpdateTypes": ["major"], "labels": ["type/major"]},
            {
              "matchUpdateTypes": ["minor"], "labels": ["type/minor"],

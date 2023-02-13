@@ -6,4 +6,4 @@ bases:
 - external-dns
 - ingress-nginx
 - metrics-server
-#- renovate
+- renovate

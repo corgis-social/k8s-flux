@@ -34,7 +34,7 @@ spec:
     renovate:
       config: |
         {
-         "printConfig": true,
+         "printConfig": false,
          "binarySource": "install",
          "repositories": ["corgis.social/k8s-flux"],
          "reqireConfig": false,
@@ -51,6 +51,10 @@ spec:
            }
          ],
          "packageRules": [
+           {
+             "matchDatasources": ["docker"],
+             "versioning": "semver"
+           },
            {"matchUpdateTypes": ["major"], "labels": ["type/major"]},
            {
              "matchUpdateTypes": ["minor"], "labels": ["type/minor"],

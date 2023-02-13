@@ -36,7 +36,7 @@ spec:
         {
          "printConfig": false,
          "binarySource": "install",
-         "repositories": ["corgis.social/k8s-flux"],
+         "repositories": ["corgis-social/k8s-flux"],
          "requireConfig": "required",
          "dependencyDashboard": true,
          "flux": {

@@ -37,7 +37,7 @@ spec:
          "printConfig": false,
          "binarySource": "install",
          "repositories": ["corgis.social/k8s-flux"],
-         "requireConfig": false,
+         "requireConfig": true,
          "dependencyDashboard": true,
          "flux": {
            "fileMatch": ["cluster/flux-system/flux-system.yaml$"]
@@ -62,27 +62,19 @@ spec:
              "versioning": "semver"
            },
            {"matchUpdateTypes": ["major"], "labels": ["type/major"]},
-           {
-             "matchUpdateTypes": ["minor"], "labels": ["type/minor"],
-             "automerge": true
-           },
-           {
-             "matchUpdateTypes": ["patch"], "labels": ["type/patch"],
-             "automerge": true
-           },
+           {"matchUpdateTypes": ["minor"], "labels": ["type/minor"]},
+           {"matchUpdateTypes": ["patch"], "labels": ["type/patch"]},
            {
              "matchDatasources": ["helm"],
              "matchUpdateTypes": ["minor"],
              "semanticCommitType": "feat",
-             "semanticCommitScope": "helm",
-             "automerge": true
+             "semanticCommitScope": "helm"
            },
            {
              "matchDatasources": ["helm"],
              "matchUpdateTypes": ["patch"],
              "semanticCommitType": "fix",
-             "semanticCommitScope": "helm",
-             "automerge": true
+             "semanticCommitScope": "helm"
            },
            {"ignoreTests": true, "matchUpdateTypes": ["minor", "patch"]},
            {"matchDatasources": ["helm"], "ignoreDeprecated": true}

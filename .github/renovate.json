@@ -1,16 +1,22 @@
 {
- "printConfig": false,
- "binarySource": "install",
- "requireConfig": "required",
+ "enabled": true,
  "dependencyDashboard": true,
- "flux": {
+  "dependencyDashboardTitle": "Renovate Dashboard",
+  "assigneesFromCodeOwners": true,
+  "reviewersFromCodeOwners": true,
+  "suppressNotifications": ["prIgnoreNotification"],
+  "prConcurrentLimit": 5,
+
+
+  "flux": {
    "fileMatch": ["cluster/flux-system/flux-system.yaml$"]
  },
  "helm-values": {"fileMatch": [
    "infra/.+/helmrelease\\.yaml$",
    "apps/.+/helmrelease\\.yaml$"
  ]},
- "rebaseWhen": "behind-base-branch",
+
+
  "regexManagers": [
    {
      "fileMatch": ["cluster/.+\\.yaml$"],
@@ -20,6 +26,8 @@
      "datasourceTemplate": "helm"
    }
  ],
+
+
  "packageRules": [
    {
      "matchDatasources": ["docker"],

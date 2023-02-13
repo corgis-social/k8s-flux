@@ -11,7 +11,7 @@
   "assigneesFromCodeOwners": true,
   "reviewersFromCodeOwners": true,
   "prConcurrentLimit": 5,
-  "printConfig": true,
+  "printConfig": false,
 
   "flux": {
     "fileMatch": ["cluster/flux-system/flux-system.yaml$"]

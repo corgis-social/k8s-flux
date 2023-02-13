@@ -37,7 +37,7 @@ spec:
          "printConfig": false,
          "binarySource": "install",
          "repositories": ["corgis.social/k8s-flux"],
-         "requireConfig": true,
+         "requireConfig": "required",
          "dependencyDashboard": true,
          "flux": {
            "fileMatch": ["cluster/flux-system/flux-system.yaml$"]

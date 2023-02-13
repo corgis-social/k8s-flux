@@ -30,7 +30,6 @@ spec:
         [[runners]]
           [runners.kubernetes]
             image = "ubuntu:18.04"
-            dns_policy = "none"
           [[runners.kubernetes.volumes.empty_dir]]
             name = "docker-certs"
             mount_path = "/certs/client"

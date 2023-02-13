@@ -36,7 +36,7 @@ spec:
         {
          "printConfig": true,
          "binarySource": "install",
-         "repositories": ["corgis-social/k8s-flux"],
+         "repositories": ["corgis.social/k8s-flux"],
          "reqireConfig": false,
          "dependencyDashboard": true,
          "helm-values": {"fileMatch": ["cluster/.+/helmrelease\\.yaml$"]},

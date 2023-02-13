@@ -14,7 +14,7 @@
   "printConfig": false,
 
   "flux": {
-    "fileMatch": ["cluster/flux-system/flux-system.yaml$"]
+    "fileMatch": ["\\.yaml&"]
   },
   "helm-values": {"fileMatch": [
     "infra/.+/helmrelease\\.yaml$",
@@ -24,7 +24,7 @@
  
   "regexManagers": [
     {
-      "fileMatch": ["cluster/.+\\.yaml$"],
+      "fileMatch": ["\\.yaml$"],
       "matchStrings": [
         "registryUrl=(?<registryUrl>.*?)\n *chart: (?<depName>.*?)\n *version: (?<currentValue>.*)\n"
       ],
